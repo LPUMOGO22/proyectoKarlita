@@ -1,6 +1,90 @@
 from django.urls import path
-from .views import HomePageView
+from .views import (
+    HomePageView,
+    UsuarioListView,
+    UsuarioDetailView,
+    UsuarioCreateView,
+    UsuarioUpdateView,
+    UsuarioDeleteView,
+    MembresiaListView,
+    MembresiaDetailView,
+    MembresiaCreateView,
+    MembresiaUpdateView,
+    MembresiaDeleteView,
+    AccesoListView,
+    AccesoDetailView,
+    AccesoCreateView,
+    AccesoUpdateView,
+    AccesoDeleteView,
+    RegistroBiometricoListView,
+    RegistroBiometricoDetailView,
+    RegistroBiometricoCreateView,
+    RegistroBiometricoUpdateView,
+    RegistroBiometricoDeleteView,
+    EmpleadoListView,
+    EmpleadoDetailView,
+    EmpleadoCreateView,
+    EmpleadoUpdateView,
+    EmpleadoDeleteView,
+)
 
 urlpatterns = [
     path("", HomePageView.as_view(), name="home"),
+    path("usuarios/", UsuarioListView.as_view(), name="usuarios"),
+    path("usuario/<int:pk>/", UsuarioDetailView.as_view(), name="usuario"),
+    path("usuario/create/", UsuarioCreateView.as_view(), name="usuario-create"),
+    path(
+        "usuario/update/<int:pk>/", UsuarioUpdateView.as_view(), name="usuario-update"
+    ),
+    path(
+        "usuario/delete/<int:pk>/", UsuarioDeleteView.as_view(), name="usuario-delete"
+    ),
+    path("membresias/", MembresiaListView.as_view(), name="membresias"),
+    path("membresia/<int:pk>/", MembresiaDetailView.as_view(), name="membresia"),
+    path("membresia/create/", MembresiaCreateView.as_view(), name="membresia-create"),
+    path(
+        "membresia/update/<int:pk>/",
+        MembresiaUpdateView.as_view(),
+        name="membresia-update",
+    ),
+    path(
+        "membresia/delete/<int:pk>/",
+        MembresiaDeleteView.as_view(),
+        name="membresia-delete",
+    ),
+    path("accesos/", AccesoListView.as_view(), name="accesos"),
+    path("acceso/<int:pk>/", AccesoDetailView.as_view(), name="acceso"),
+    path("acceso/create/", AccesoCreateView.as_view(), name="acceso-create"),
+    path("acceso/update/<int:pk>/", AccesoUpdateView.as_view(), name="acceso-update"),
+    path("acceso/delete/<int:pk>/", AccesoDeleteView.as_view(), name="acceso-delete"),
+    path("registros/", RegistroBiometricoListView.as_view(), name="registros"),
+    path("registro/<int:pk>/", RegistroBiometricoDetailView.as_view(), name="registro"),
+    path(
+        "registro/create/",
+        RegistroBiometricoCreateView.as_view(),
+        name="registro-create",
+    ),
+    path(
+        "registro/update/<int:pk>/",
+        RegistroBiometricoUpdateView.as_view(),
+        name="registro-update",
+    ),
+    path(
+        "registro/delete/<int:pk>/",
+        RegistroBiometricoDeleteView.as_view(),
+        name="registro-delete",
+    ),
+    path("empleados/", EmpleadoListView.as_view(), name="empleados"),
+    path("empleado/<int:pk>/", EmpleadoDetailView.as_view(), name="empleado"),
+    path("empleado/create/", EmpleadoCreateView.as_view(), name="empleado-create"),
+    path(
+        "empleado/update/<int:pk>/",
+        EmpleadoUpdateView.as_view(),
+        name="empleado-update",
+    ),
+    path(
+        "empleado/delete/<int:pk>/",
+        EmpleadoDeleteView.as_view(),
+        name="empleado-delete",
+    ),
 ]
