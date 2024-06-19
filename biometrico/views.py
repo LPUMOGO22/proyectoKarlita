@@ -105,8 +105,6 @@ class MembresiaCreateView(CreateView):
         "nombre",
         "descripcion",
         "precio",
-        "duracion",
-        "estado",
     ]
     success_url = "/membresias"
 
@@ -118,8 +116,6 @@ class MembresiaUpdateView(UpdateView):
         "nombre",
         "descripcion",
         "precio",
-        "duracion",
-        "estado",
     ]
     success_url = "/membresias"
 

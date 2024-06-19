@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>Eliminar Membresia</title> 
+        <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+    </head> 
+    <body> 
+        <div class="content section"> 
+            <div class="block"> 
+                <div class="block__header"> 
+                    <h1>Bienvenido!</h1> 
+                </div> 
+                <div class="block__content"> 
+                    <ul> 
+                        <li><a href="{% url 'home' %}">Home</a></li> 
+                        <li><a href="{% url 'usuarios' %}">Usuarios</a></li>
+                        <li><a href="{% url 'membresias' %}">Membresias</a></li>
+                        <li><a href="{% url 'accesos' %}">Accesos</a></li>
+                        <li><a href="{% url 'registros' %}">Registros Biométricos</a></li>
+                        <li><a href="{% url 'empleados' %}">Empleados</a></li>
+                    </ul> 
+                </div> 
+            </div>
+            <div class="block">
+                <h2>Eliminar Membresia</h2>
+                <p>¿Estás seguro de que quieres eliminar la membresia "{{ object.nombre }}"?</p>
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit">Eliminar</button>
+                </form>
+            </div>
+        </div> 
+    </body> 
+</html>
